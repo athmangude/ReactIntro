@@ -3,12 +3,13 @@
   <head>
     <script src="bower_components/react/react.js"></script>
     <script src="bower_components/react/JSXTransformer.js"></script>
-    <!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
+    <link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <body>
     <div id="mount-point"></div>
     <script type="text/jsx">
       /** @jsx React.DOM */
+      
       var FilteredList = React.createClass({
         filterList: function(event){
           var updatedList = this.state.initialItems;
@@ -29,12 +30,12 @@
         render: function(){
           return (
             <div className="filter-list">
-              <input type="text" placeholder="search" onChange={this.filterList} />
+              <input type="text" placeholder="search" onChange={this.filterList}/>
               <List items={this.state.items}/>
             </div>
           );
         }
-      })
+      });
 
       var List = React.createClass({
         render: function(){
@@ -43,7 +44,7 @@
               {
                 this.props.items.map(function(item){
                   return <li key={item}>{item}</li>
-                });
+                })
               }
             </ul>
           )
